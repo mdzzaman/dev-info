@@ -1,5 +1,5 @@
 {
-    "issuer": "https://stg-pwc-policy-information.selise.biz",
+    "issuer": "https://stg-slepw-business.selise.biz",
     "jwks_uri": "https://www.googleapis.com/oauth2/v3/certs",
     "authorization_endpoint": "https://stg-slepw-business.selise.biz/SlpwcBusinessService/IdentityServer/authorize",
     "token_endpoint": "https://stg-slepw-business.selise.biz/SlpwcBusinessService/IdentityServer/token",
