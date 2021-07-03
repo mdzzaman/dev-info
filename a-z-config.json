@@ -1,6 +1,6 @@
 {
     "issuer": "https://stg-slepw-business.selise.biz",
-    "jwks_uri": "https://www.googleapis.com/oauth2/v3/certs",
+    "jwks_uri": "https://stg-slepw-business.selise.biz/.well-known/openid-configuration/jwks",
     "authorization_endpoint": "https://stg-slepw-business.selise.biz/connect/authorize",
     "token_endpoint": "https://stg-slepw-business.selise.biz/connect/token",
     "userinfo_endpoint": "https://stg-slepw-business.selise.biz/connect/userinfo",
