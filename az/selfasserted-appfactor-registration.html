@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ePrivateWealth</title>
 
 
     <style>
@@ -149,7 +149,7 @@
             width: 100%;
         }
 
-        .enter-code-buttons {
+        .buttons {
             margin-top: 20px;
             display: flex;
             flex-direction: row;
@@ -157,7 +157,7 @@
             font-weight: bold;
         }
 
-        .enter-code-buttons button:first-of-type {
+        .buttons button:first-of-type {
             width: 160px;
             height: 40px;
             background: #FBE9EB;
@@ -170,7 +170,7 @@
             cursor: pointer;
         }
 
-        .enter-code-buttons button:nth-of-type(2) {
+        .buttons button:nth-of-type(2) {
             width: 160px;
             height: 40px;
             background: #D82034;
@@ -237,6 +237,14 @@
 
             .page-action-inner-container {
                 padding: 50px;
+            }
+
+            .buttons button:first-of-type {
+                width: 150px;
+            }
+
+            .buttons button:nth-of-type(2) {
+                width: 150px;
             }
 
             .language-container {
@@ -393,11 +401,11 @@
                 margin: 10px 0px;
             }
 
-            .enter-code-buttons button:first-of-type {
+            .buttons button:first-of-type {
                 width: 150px;
             }
 
-            .enter-code-buttons button:nth-of-type(2) {
+            .buttons button:nth-of-type(2) {
                 width: 150px;
             }
 
@@ -438,11 +446,11 @@
                 margin: 10px 0px;
             }
 
-            .enter-code-buttons button:first-of-type {
+            .buttons button:first-of-type {
                 width: 130px;
             }
 
-            .enter-code-buttons button:nth-of-type(2) {
+            .buttons button:nth-of-type(2) {
                 width: 130px;
             }
 
@@ -457,44 +465,44 @@
     </style>
 
     <style>
-        .has-float-label {
+        #strongAuthenticationAppCode {
             display: block;
             position: relative;
             margin-bottom: 16px;
         }
 
-        .has-float-label input:hover:not(:disabled):not(:focus) {
+        #strongAuthenticationAppCode:hover:not(:disabled):not(:focus) {
             border-bottom: 2px solid #1e1e1e !important;
         }
 
-        .has-float-label input[value=""] {
+        #strongAuthenticationAppCode[value=""] {
             border-top: 2px solid #1e1e1e !important;
         }
 
-        .has-float-label input:hover:invalid:not(:placeholder-shown):not(:focus) {
+        #strongAuthenticationAppCode:hover:invalid:not(:placeholder-shown):not(:focus) {
             border-bottom: 2px solid #D82034 !important;
         }
 
-        .has-float-label input:focus {
+        #strongAuthenticationAppCode:focus {
             border-bottom: 2px solid #D82034;
             transition: all .2s;
         }
 
-        .has-float-label input:invalid:not(:focus) {
+        #strongAuthenticationAppCode:invalid:not(:focus) {
             border-bottom: 2px solid #D82034;
         }
 
-        .has-float-label input:placeholder-shown:not(:focus) {
+        #strongAuthenticationAppCode:placeholder-shown:not(:focus) {
             border-bottom: 2px solid #8a8a8a;
         }
 
-        .has-float-label input:disabled {
+        #strongAuthenticationAppCode:disabled {
             border-bottom: 2px dotted #8a8a8a !important;
             pointer-events: none;
             background-color: inherit;
         }
 
-        .has-float-label input {
+        #strongAuthenticationAppCode {
             font-size: inherit;
             padding: 16px 0 8px 0;
             border: 0;
@@ -514,14 +522,13 @@
             outline: none;
         }
 
-        .has-float-label input:placeholder-shown:not(:focus)+.label {
+        #strongAuthenticationAppCode:placeholder-shown:not(:focus)+.label {
             font-size: 16px;
             top: 20px;
             color: #838383;
         }
 
-        .has-float-label label,
-        .has-float-label>.label {
+        #strongAuthenticationAppCode::placeholder{
             position: absolute;
             left: 0;
             top: 0;
@@ -533,15 +540,15 @@
 
         }
 
-        .has-float-label input:invalid~.label {
+        #strongAuthenticationAppCode:invalid~.label {
             color: #D82034;
         }
 
-        .has-float-label input:focus~.label {
+        #strongAuthenticationAppCode:focus~.label {
             color: #D82034;
         }
 
-        .has-float-label input:invalid:not(:focus):not(:placeholder-shown)~.error {
+        #strongAuthenticationAppCode:invalid:not(:focus):not(:placeholder-shown)~.error {
             display: block;
         }
 
@@ -550,7 +557,7 @@
             display: none;
         }
 
-        .has-float-label input:invalid:not(:focus):not(:placeholder-shown)~.helper {
+        #strongAuthenticationAppCode:invalid:not(:focus):not(:placeholder-shown)~.helper {
             display: none;
         }
 
@@ -565,6 +572,20 @@
             font-size: 12px;
             padding-top: 8px;
             line-height: 1;
+        }
+    </style>
+
+    <style>
+        .intro {
+            display: none;
+        }
+
+        #strongAuthenticationAppCode_label {
+            display: none;
+        }
+
+        .helpLink.tiny {
+            display: none;
         }
     </style>
 </head>
@@ -620,15 +641,25 @@
                 </div>
 
                 <div class="enter-code">
-                    <label class="has-float-label">
+                    <!-- <label class="has-float-label">
                         <input placeholder="" type="text" />
                         <span class="label">Enter code</span>
-                    </label>
+                    </label> -->
 
-                    <div class="enter-code-buttons">
+                    <!-- <input id="strongAuthenticationAppCode" class="textInput" type="text"
+                        placeholder="3. Enter the verification code" aria-label="3. Enter the verification code"
+                        aria-required="true" autofocus="autofocus"> -->
+
+                    <!-- <div class="buttons">
                         <button>Back</button>
                         <button>Continue</button>
-                    </div>
+                    </div> -->
+
+                    <!-- <div class="buttons">
+                        <button id="continue" type="submit" form="attributeVerification" aria-disabled="false"
+                            aria-label="Continue">Continue</button>
+                        <button id="cancel" aria-label="Cancel" formnovalidate="">Cancel</button>
+                    </div> -->
                 </div>
 
                 <div id="api"></div>
