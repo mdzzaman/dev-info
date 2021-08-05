@@ -635,7 +635,7 @@
                     <p>Enter this credentials key in the authenticator</p>
 
                     <div class="copy-to-clipboard">
-                        <p id="extension_StrongAuthenticationAppSecretKey"></p>
+                        <p id="extension_StrongAuthenticationAppSecretKeyText"></p>
                         <button onclick="copyToClipboard()">Copy to clipboard</button>
                     </div>
                 </div>
@@ -689,13 +689,17 @@
             var $strongAuthenticationAppQRCodeBitmapTextInput = $('#strongAuthenticationAppQRCodeBitmap');
             $strongAuthenticationAppQRCodeBitmapImage.attr('src', 'data:image/png;base64,' + $strongAuthenticationAppQRCodeBitmapTextInput.val());
             $('#attributeList ul li:nth-child(2)').remove();
+
+            var $extension_StrongAuthenticationAppSecretKeyTextInput = $('#extension_StrongAuthenticationAppSecretKey');
+            console.log($extension_StrongAuthenticationAppSecretKeyTextInput.val());
+            $('#extension_StrongAuthenticationAppSecretKey').innerText($extension_StrongAuthenticationAppSecretKeyTextInput.val());
         });
     </script>
 
     <script>
         function copyToClipboard() {
             debugger;
-            var text = document.getElementById('extension_StrongAuthenticationAppSecretKey').innerText;
+            var text = document.getElementById('extension_StrongAuthenticationAppSecretKeyText').innerText;
 
             var selected;;
             var el = document.createElement('textarea');
