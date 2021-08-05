@@ -855,6 +855,7 @@
                         </div>
 
                         <div>
+                            <input type="hidden" id="strongResetAuthAppToken" value="test 5"/>
                             <a href="" id="reset_auth_app">Reset Auth app</a>
                         </div>
                     </div>
@@ -870,7 +871,6 @@
 
             var $reset_auth_app = $('#reset_auth_app');
             var $strongResetAuthAppToken = $('#strongResetAuthAppToken');
-            console.log('reset link', $strongResetAuthAppToken.val());
             $reset_auth_app.attr('href', 'https://stg-slepw-identity.selise.biz/Otp/SendQRCodeReRegistrationEmail?resetAuthAppToken=' + $strongResetAuthAppToken.val());
         });
     </script>
