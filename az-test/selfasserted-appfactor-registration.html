@@ -2,10 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ePrivateWealth</title>
+
+    <style>
+        @font-face {
+            font-family: "ITC Legacy Serif";
+            src: url("https://cdn.selise.biz/slpc/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-webfont.eot?");
+            src: url("https://cdn.selise.biz/slpc/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-webfont.eot?") format("embedded-opentype"), url("https://cdn.selise.biz/slpc/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-webfont.ttf?") format("truetype"), url("https://cdn.selise.biz/slpc/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-webfont.woff?") format("woff"), url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-webfont.svg?") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "ITC Legacy Serif Bold";
+            src: url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-bold-webfont.eot?");
+            src: url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-bold-webfont.eot?") format("embedded-opentype"), url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-bold-webfont.ttf?") format("truetype"), url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-bold-webfont.woff?") format("woff"), url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-bold-webfont.svg?") format("svg");
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: "ITC Legacy Serif Italic";
+            src: url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-italic-webfont.eot?");
+            src: url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-italic-webfont.eot?") format("embedded-opentype"), url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-italic-webfont.ttf?") format("truetype"), url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-italic-webfont.woff?") format("woff"), url("http://pwc.fakedomain.com/itclegacyserif-lt-book-font/itc-legacy-serif-lt-book-italic-webfont.svg?") format("svg");
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'CalibriLight';
+            src: url('http://pwc.fakedomain.com/calibri/calibri-light.eot?');
+            src: local('Calibri Light'), url('http://pwc.fakedomain.com/calibri/calibri-light.eot?') format('embedded-opentype'), url('http://pwc.fakedomain.com/calibri/calibri-light.ttf?') format('truetype'), url('http://pwc.fakedomain.com/calibri/calibri-light.woff?') format('woff'), url('http://pwc.fakedomain.com/calibri/calibri-light.svg?') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        @font-face {
+            font-family: 'CalibriBold';
+            src: url('http://pwc.fakedomain.com/calibri/Calibri-bold.eot?');
+            src: local('Calibri Bold'), url('http://pwc.fakedomain.com/calibri/Calibri-bold.eot?') format('embedded-opentype'), url('http://pwc.fakedomain.com/calibri/Calibri-Bold.ttf?') format('truetype'), url('http://pwc.fakedomain.com/calibri/Calibri-Bold.woff?') format('woff'), url('http://pwc.fakedomain.com/calibri/Calibri-Bold.svg?') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+    </style>
 
 
     <style>
@@ -15,8 +58,21 @@
             padding: 0px;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'ITC Legacy Serif';
+        }
+
         a {
             color: #D82034;
+        }
+
+        button {
+            font-family: 'CalibriLight';
         }
 
         .container {
@@ -32,6 +88,7 @@
         }
 
         .swiss-life-moto-container h1 {
+            font-family: 'ITC Legacy Serif Bold';
             margin: 0px;
             padding: 20px;
             font-weight: bold;
@@ -40,6 +97,7 @@
         }
 
         .swiss-life-moto-container p {
+            font-family: 'ITC Legacy Serif';
             margin: 0px;
             padding: 10px 20px;
             font-style: italic;
@@ -55,6 +113,8 @@
 
         .page-action-container {
             position: absolute;
+            max-height: 10000px !important;
+            overflow-y: scroll;
             right: 0px;
             top: 0px;
             height: 100vh;
@@ -70,13 +130,14 @@
         }
 
         .page-action-inner-container h2 {
+            font-family: 'ITC Legacy Serif';
             margin-top: 20px;
             margin-bottom: 0px;
             font-size: 24px;
         }
 
         .page-action-inner-container p {
-            font-family: Calibri;
+            font-family: 'CalibriLight';
             font-size: 18px;
         }
 
@@ -93,6 +154,7 @@
         }
 
         .download-app {
+            font-family: 'CalibriLight';
             margin-top: 0px;
             font-size: 14px !important;
         }
@@ -103,6 +165,7 @@
         }
 
         .having-trouble {
+            font-family: 'CalibriLight';
             margin-top: 20px;
         }
 
@@ -130,14 +193,17 @@
 
         .attrEntry button {
             width: 45%;
-            background: #D82034;
+            background: #FBE9EB;
             border-radius: 0px 4px 4px 0px;
-            color: #ffffff;
+            color: #D82034;
             font-size: 16px;
             font-family: Calibri;
             font-weight: bold;
             border-color: transparent !important;
             cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .enter-code {
@@ -160,8 +226,8 @@
         .buttons button:first-of-type {
             width: 160px;
             height: 40px;
-            background: #FBE9EB;
-            color: #D82034;
+            background: #D82034;
+            color: #FFFFFF;
             font-size: 16px;
             font-family: Calibri;
             font-weight: bold;
@@ -173,8 +239,8 @@
         .buttons button:nth-of-type(2) {
             width: 160px;
             height: 40px;
-            background: #D82034;
-            color: #FFFFFF;
+            background: #FBE9EB;
+            color: #D82034;
             font-size: 16px;
             font-family: Calibri;
             font-weight: bold;
@@ -184,16 +250,18 @@
         }
 
         .language-container {
+            font-family: 'CalibriLight';
             display: flex;
             flex-direction: column;
-            position: absolute;
-            bottom: 40px;
+            margin-top: 20px;
+            /* position: absolute; */
+            /* bottom: 10px; */
         }
 
         .support-center {
+            font-family: 'CalibriLight';
             text-decoration: none;
-            margin-top: 40px;
-            font-family: Calibri;
+            margin-top: 20px;
             font-size: 18px;
             color: #D82034;
         }
@@ -217,10 +285,6 @@
 
             .page-action-inner-container {
                 padding: 50px;
-            }
-
-            .language-container {
-                bottom: 20px;
             }
         }
 
@@ -574,6 +638,11 @@
             padding-top: 8px;
             line-height: 1;
         }
+
+        .selection-label {
+            font-size: 16px;
+            color: #838383;
+        }
     </style>
 
     <style>
@@ -605,11 +674,11 @@
     <div class='container'>
         <div class="swiss-life-moto-container">
             <div class="swisslife-moto">
-                <h1>Connecting you to a world of choice</h1>
-                <p>Digital wealth planning solutions</p>
-                <p>that give our partners and clients the tools and flexibility needed</p>
-                <p>to live a self-determined life in line with their choices</p>
-                <p>#yourlife</p>
+                <h1 id="HEADER_CONNECTING">{{localizationObj.HEADER_CONNECTING}}</h1>
+                <p id="P_DIGITAL">{{localizationObj.P_DIGITAL}}</p>
+                <p id="P_THAT_GIVE">{{localizationObj.P_THAT_GIVE}}</p>
+                <p id="P_TO_LIVE">{{localizationObj.P_TO_LIVE}}</p>
+                <p id="P_YOUR_LIFE">{{localizationObj.P_YOUR_LIFE}}</p>
             </div>
         </div>
 
@@ -619,25 +688,28 @@
                     src="data:image/png;base64,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"
                     alt="">
 
-                <h2>Scan QR code with authenticator</h2>
-                <p>Open the authbenticator app on your mobile device to link it to scan this QR code. You can install
-                    authenticator app from below</p>
-                <p class="download-app">
-                    Download the google authenticator app from
-                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2"
-                        target="__blank">Play
-                        store</a>,
-                    <a href="https://itunes.apple.com/au/app/google-authenticator/id388497605"
-                        target="__blank">Authenticator app
-                        store</a>,
-                    <a href="https://www.microsoft.com/en-AU/store/apps/Authenticator/9WZDNCRFJ3RJ"
-                        target="__blank">Windows store</a>
+                <h2 id="HEADER_SCAN">{{localizationObj.HEADER_SCAN}}</h2>
+                <p id="P_OPEN_AUTH">{{localizationObj.P_OPEN_AUTH}}</p>
+                <p class="download-app" id="P_DOWNLOAD_APP">
+                    {{localizationObj.P_DOWNLOAD_APP}}
+                    <a id="P_PLAY_STORE"
+                        href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2"
+                        target="__blank">
+                        {{localizationObj.P_PLAY_STORE}}
+                    </a>,
+                    <a id="P_AUTH_STORE" href="https://itunes.apple.com/au/app/google-authenticator/id388497605"
+                        target="__blank">
+                        {{localizationObj.P_AUTH_STORE}}
+                    </a>,
+                    <a id="P_WINDOW_STORE" href="https://www.microsoft.com/en-AU/store/apps/Authenticator/9WZDNCRFJ3RJ"
+                        target="__blank">
+                        {{localizationObj.P_WINDOW_STORE}}
+                    </a>
                 </p>
 
-                <h3>Scan this QR code</h3>
+                <h3 id="H_SCAN_CODE">{{localizationObj.H_SCAN_CODE}}</h3>
 
                 <div class="qr-code-container">
-                    <!-- <img src="image 4 (Traced).png" alt=""> -->
                     <img id="strongAuthenticationAppQRCodeBitmapImage" src="">
                 </div>
 
@@ -652,11 +724,6 @@
                 </div> -->
 
                 <!-- <div class="enter-code">
-                    <label class="has-float-label">
-                        <input placeholder="" type="text" />
-                        <span class="label">Enter code</span>
-                    </label>
-
                     <div class="buttons">
                         <button id="continue" type="submit" form="attributeVerification" aria-disabled="false"
                             aria-label="Continue">Continue</button>
@@ -696,12 +763,12 @@
                 <div id="api"></div>
 
                 <div class="language-container">
-                    <!-- <label class="selection-label" for="language">Language</label>
+                    <label id="L_LANG" class="selection-label" for="language">{{localizationObj.L_LANG}}</label>
                     <select name="language" id="language">
                         <option value="en">English</option>
                         <option value="fr">French</option>
                         <option value="de">German</option>
-                    </select> -->
+                    </select>
 
                     <a class="support-center"
                         href="https://www.swisslife-global.com/global-private-wealth/resources/e-private-wealth.html"
@@ -731,11 +798,20 @@
             havingTrouble.classList.add('having-trouble');
 
             var havingTroublep1 = document.createElement('p');
-            var havingTroublep1TextNode = document.createTextNode('Having problems with scanning?');
+            havingTroublep1.setAttribute("id", "P_HAVING_TROUBLE");
+            var havingTroublep1TextNode = document.createTextNode('{{localizationObj.P_HAVING_TROUBLE}}');
+
             var havingTroublep2 = document.createElement('p');
-            var havingTroublep2TextNode = document.createTextNode('Enter this credentials key in the authenticator');
+            havingTroublep2.setAttribute("id", "P_ENTER_CRED");
+            var havingTroublep2TextNode = document.createTextNode('{{localizationObj.P_ENTER_CRED}}');
+
             var copyToClipboard = document.createElement('button');
-            var copyToClipboardTextNode = document.createTextNode('Copy to clipboard');
+            copyToClipboard.setAttribute("id", "L_COPY");
+            var copyToClipboardTextNode = document.createTextNode('{{localizationObj.L_COPY}}');
+
+            document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj.strongAuthenticationAppCode_label}}";
+            document.getElementById("continue").innerHTML = "{{localizationObj.continue}}";
+            document.getElementById("cancel").innerHTML = "{{localizationObj.cancel}}";
 
             copyToClipboard.addEventListener('click', (event) => {
                 var text = document.getElementById('extension_StrongAuthenticationAppSecretKey').value;
@@ -768,6 +844,117 @@
             secretKeyContainer.appendChild(copyToClipboard);
             secretKeyParentContainer.insertAdjacentElement('afterbegin', havingTrouble);
         }, 500);
+    </script>
+
+    <script>
+        var localizationObj = {
+            en: {
+                "HEADER_CONNECTING": "Connecting you to a world of choice",
+                "P_DIGITAL": "Digital wealth planning solutions",
+                "P_THAT_GIVE": "that give our partners and clients the tools and flexibility needed",
+                "P_TO_LIVE": "to live a self-determined life in line with their choices",
+                "P_YOUR_LIFE": "#yourlife",
+                "HEADER_SCAN": "Scan QR code with authenticator",
+                "P_OPEN_AUTH": "Open the authbenticator app on your mobile device to link it to scan this QR code. You can install authenticator app from below",
+                "P_DOWNLOAD_APP": "Download the google authenticator app from",
+                "P_PLAY_STORE": "Play store",
+                "P_AUTH_STORE": "Authenticator app store",
+                "P_WINDOW_STORE": "Windows store",
+                "H_SCAN_CODE": "Scan this QR code",
+                "P_HAVING_TROUBLE": "Having problems with scanning?",
+                "P_ENTER_CRED": "Enter this credentials key in the authenticator",
+                "L_COPY": "Copy to clipboard",
+                "strongAuthenticationAppCode": "Enter code",
+                "L_LANG": "Language",
+                "continue": "Continue",
+                "cancel": "Cancel"
+            },
+            fr: {
+                "HEADER_CONNECTING": "Vous connecter à un monde de choix",
+                "P_DIGITAL": "Solutions numériques de planification du patrimoine",
+                "P_THAT_GIVE": "qui donnent à nos partenaires et clients les outils et la flexibilité nécessaires",
+                "P_TO_LIVE": "de vivre une vie autodéterminée en accord avec leurs choix",
+                "P_YOUR_LIFE": "#votrevie",
+                "HEADER_SCAN": "Scanner le code QR avec l'authentificateur",
+                "P_OPEN_AUTH": "Ouvrez l'application authbenticator sur votre appareil mobile pour la lier au scan de ce code QR. Vous pouvez installer l'application authenticator à partir de ce qui suit",
+                "P_DOWNLOAD_APP": "Téléchargez l'application google authenticator à partir de",
+                "P_PLAY_STORE": "Boutique en ligne",
+                "P_AUTH_STORE": "Boutique de l'application Authenticator",
+                "P_WINDOW_STORE": "Boutique Windows",
+                "H_SCAN_CODE": "Scanner ce code QR",
+                "P_HAVING_TROUBLE": "Vous avez des problèmes de numérisation ?",
+                "P_ENTER_CRED": "Entrez cette clé d'identification dans l'authentificateur.",
+                "L_COPY": "Copier dans le presse-papiers",
+                "strongAuthenticationAppCode": "Entrez le code",
+                "L_LANG": "Langue",
+                "continue": "Continuer",
+                "cancel": "Annuler"
+            },
+            de: {
+                "HEADER_CONNECTING": "Die Verbindung zu einer Welt der Möglichkeiten",
+                "P_DIGITAL": "Digitale Lösungen für die Vermögensplanung",
+                "P_THAT_GIVE": "die unseren Partnern und Kunden die erforderlichen Instrumente und die nötige Flexibilität bieten",
+                "P_TO_LIVE": "ein selbstbestimmtes Leben im Einklang mit ihren Entscheidungen zu führen",
+                "P_YOUR_LIFE": "#DeinLeben",
+                "HEADER_SCAN": "QR-Code mit Authentifikator scannen",
+                "P_OPEN_AUTH": "Öffnen Sie die authbenticator-App auf Ihrem mobilen Gerät, um sie mit dem Scannen dieses QR-Codes zu verbinden. Sie können die authenticator App von unten installieren",
+                "P_DOWNLOAD_APP": "Laden Sie die Google Authenticator-App herunter unter",
+                "P_PLAY_STORE": "Play Store",
+                "P_AUTH_STORE": "Authenticator App Store",
+                "P_WINDOW_STORE": "Windows-Speicher",
+                "H_SCAN_CODE": "Scannen Sie diesen QR-Code",
+                "P_HAVING_TROUBLE": "Haben Sie Probleme beim Scannen?",
+                "P_ENTER_CRED": "Geben Sie diesen Anmeldeschlüssel in den Authentifikator ein",
+                "L_COPY": "In die Zwischenablage kopieren",
+                "strongAuthenticationAppCode": "Code eingeben",
+                "L_LANG": "Sprache",
+                "continue": "Weiter",
+                "cancel": "Abbrechen"
+            }
+        };
+
+        var currentLang = (localStorage.getItem("langKey")) ? localStorage.getItem("langKey") : 'en';
+        var languageValueBeforeChange;
+        document.getElementById("language").value = currentLang;
+
+        function changeLanguage(current, previous) {
+            var currentLangLocalizationObj = localizationObj[current];
+            var previousLocalizationObj = localizationObj[previous];
+            var idList = Object.keys(currentLangLocalizationObj);
+
+            setTimeout(() => {
+                idList.forEach(id => {
+                    var element = document.getElementById(id);
+                    if (element.nodeName === "INPUT") {
+                        element.placeholder = currentLangLocalizationObj[id];
+                    } else {
+                        var replaceString;
+                        var replacedString = currentLangLocalizationObj[id];
+                        if (previous) {
+                            replaceString = previousLocalizationObj[id];
+                        } else {
+                            replaceString = "{{localizationObj." + id + "}}";
+                        }
+
+                        element.innerHTML = element.innerHTML.replace(replaceString, replacedString);
+                    }
+                });
+                languageValueBeforeChange = current
+            }, 700);
+        }
+
+        document.getElementById("language").addEventListener("change", (event) => {
+            localStorage.setItem("langKey", event.target.value);
+            currentLang = event.target.value;
+            changeLanguage(currentLang, languageValueBeforeChange);
+        });
+
+        // document.getElementById("language").addEventListener("focus", (event) => {
+        //     languageValueBeforeChange = event.target.value;
+        //     console.log(languageValueBeforeChange)
+        // });
+
+        changeLanguage(currentLang);
     </script>
     <!-- #endregion Scripts -->
 </body>
