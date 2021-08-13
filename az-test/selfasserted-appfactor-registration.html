@@ -788,6 +788,12 @@
             $strongAuthenticationAppQRCodeBitmapImage.attr('src', 'data:image/png;base64,' + $strongAuthenticationAppQRCodeBitmapTextInput.val());
             $('#attributeList ul li:nth-child(2)').remove();
         });
+
+        history.pushState(null, document.title, location.href);
+        window.addEventListener('popstate', function (event)
+        {
+        history.pushState(null, document.title, location.href);
+        });
     </script>
 
     <script>
