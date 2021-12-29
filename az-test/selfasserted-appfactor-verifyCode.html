@@ -833,6 +833,10 @@
             margin-bottom: 1em;
         }
 
+        #passwordEntryMismatch, #requiredFieldMissing, #fieldIncorrect, #claimVerificationServerError {
+            color: #D82034;
+        }
+
         /*for mobiles and tablets*/
         @media (max-width: 720px), (orientation: portrait){
 
@@ -1031,6 +1035,14 @@
     {
     history.pushState(null, document.title, location.href);
     });
+</script>
+<script>
+    $(function() {
+        $("#strongAuthenticationAppCode").after($("#passwordEntryMismatch"));
+        $("#strongAuthenticationAppCode").after($("#requiredFieldMissing"));
+        $("#strongAuthenticationAppCode").after($("#fieldIncorrect"));
+        $("#strongAuthenticationAppCode").after($("#claimVerificationServerError"));
+    })
 </script>
 </body>
 </html>
