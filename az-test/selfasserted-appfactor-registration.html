@@ -251,35 +251,6 @@
             cursor: pointer;
         }
 
-        .language-container {
-            font-family: 'CalibriLight';
-            display: flex;
-            flex-direction: column;
-            margin-top: 20px;
-            /* position: absolute; */
-            /* bottom: 10px; */
-        }
-
-        .support-center {
-            font-family: 'CalibriLight';
-            text-decoration: none;
-            margin-top: 20px;
-            font-size: 18px;
-            color: #D82034;
-        }
-
-        #language {
-            margin-top: 10px;
-            width: 250px;
-            border: none;
-            border-bottom: 1px solid rgba(170, 170, 170, 0.3);
-        }
-
-        #language:focus-visible {
-            outline-offset: none !important;
-            outline: none !important;
-        }
-
         @media only screen and (max-width: 1440px) {
             .page-action-container {
                 width: 30vw !important;
@@ -311,11 +282,6 @@
 
             .buttons button:nth-of-type(2) {
                 width: 150px;
-            }
-
-            .language-container {
-                bottom: 10px;
-                position: relative;
             }
         }
 
@@ -402,10 +368,6 @@
             p {
                 margin: 10px 0px;
             }
-
-            .language-container {
-                bottom: 10px;
-            }
         }
 
         @media only screen and (max-width: 375px) {
@@ -431,14 +393,6 @@
             .page-action-inner-container h3,
             p {
                 margin: 10px 0px;
-            }
-
-            .language-container {
-                bottom: 10px;
-            }
-
-            .support-center {
-                margin-top: 10px;
             }
         }
 
@@ -473,10 +427,6 @@
 
             .buttons button:nth-of-type(2) {
                 width: 150px;
-            }
-
-            .language-container {
-                bottom: 5px;
             }
         }
 
@@ -518,14 +468,6 @@
 
             .buttons button:nth-of-type(2) {
                 width: 130px;
-            }
-
-            .language-container {
-                position: relative;
-            }
-
-            .support-center {
-                margin-top: 15px;
             }
         }
     </style>
@@ -670,6 +612,89 @@
             padding-inline-start: 0px;
         }
     </style>
+
+    <style>
+        .language-container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 40px;
+            left: 35%;
+        }
+
+        .support-center {
+            text-decoration: none;
+            margin-top: 20px;
+            font-family: 'CalibriRegular';
+            font-size: 18px;
+            color: #D82034;
+        }
+
+        .btn-group button {
+            background-color: #FFFF;
+            border: 1px solid rgba(0, 0, 0, .12);
+            color: #3D3D3D;
+            padding: 10px 14px;
+            cursor: pointer !important;
+            float: left;
+            font-size: 14px !important;
+            font-family: RobotoCondensed !important;
+            border-radius: 3px !important;
+            top: 50px !important;
+        }
+
+        .button-toggle:hover {
+            background-color: #F7F7F7 !important;
+        }
+
+        .button-toggle:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .active-button {
+            background: #d82034 !important;
+            color: #FFFF !important;
+            pointer-events: none;
+        }
+
+        @media only screen and (max-width: 1440px) {
+            .language-container {
+                bottom: 20px;
+                left: 32%;
+            }
+        }
+
+        @media only screen and (max-width: 1366px) {
+            .language-container {
+                position: relative;
+                bottom: 0;
+                left: 0;
+            }
+
+            .center {
+                display: flex;
+                text-align: center !important;
+                justify-content: center !important;
+            }
+        }
+
+        @media only screen and (max-width: 1280px) {}
+
+        @media only screen and (max-width: 1024px) {}
+
+        @media only screen and (max-width: 768px) {}
+
+        @media only screen and (max-width: 480px) {}
+
+        @media only screen and (max-width: 414px) {}
+
+        @media only screen and (max-width: 375px) {}
+
+        @media only screen and (max-width: 360px) {}
+
+        @media only screen and (max-width: 320px) {}
+    </style>
 </head>
 
 <body>
@@ -764,17 +789,21 @@
 
                 <div id="api"></div>
 
-                <div class="language-container">
-                    <label id="L_LANG" class="selection-label" for="language">{{localizationObj.L_LANG}}</label>
-                    <select name="language" id="language">
-                        <option value="en">English</option>
-                        <option value="fr">French</option>
-                        <option value="de">German</option>
-                    </select>
+                <div class="language-container" style="z-index:1000">
+                    <div class="btn-group center">
+                        <button id="languageEN" onclick="changeLanguageOnClick('en')" class="button-toggle"
+                            type="button" value="en">EN</button>
+                        <button id="languageDE" onclick="changeLanguageOnClick('de')" class="button-toggle"
+                            type="button" value="de">DE</button>
+                        <button id="languageFR" onclick="changeLanguageOnClick('fr')" class="button-toggle"
+                            type="button" value="fr">FR</button>
+                    </div>
 
-                    <a class="support-center"
+                    <a class="support-center center"
                         href="https://www.swisslife-global.com/global-private-wealth/resources/e-private-wealth.html"
-                        target="__blank">Support center</a>
+                        target="__blank">
+                        <span class="label-support">Support center</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -922,46 +951,48 @@
 
         var currentLang = (localStorage.getItem("langKey")) ? localStorage.getItem("langKey") : 'en';
         var languageValueBeforeChange;
-        document.getElementById("language").value = currentLang;
+        document.getElementById("language" + currentLang.toUpperCase()).classList.add('active-button');
 
         function changeLanguage(current, previous) {
             var currentLangLocalizationObj = localizationObj[current];
             var previousLocalizationObj = localizationObj[previous];
             var idList = Object.keys(currentLangLocalizationObj);
 
+            if (previous) {
+                document.getElementById("language" + current.toUpperCase()).classList.add('active-button');
+                document.getElementById("language" + previous.toUpperCase()).classList.remove('active-button');
+            }
+
             setTimeout(() => {
                 idList.forEach(id => {
                     var element = document.getElementById(id);
-                    if (element.nodeName === "INPUT") {
-                        element.placeholder = currentLangLocalizationObj[id];
-                    } else {
-                        var replaceString;
-                        var replacedString = currentLangLocalizationObj[id];
-                        if (previous) {
-                            replaceString = previousLocalizationObj[id];
+                    if (element) {
+                        if (element.nodeName === "INPUT") {
+                            element.placeholder = currentLangLocalizationObj[id];
                         } else {
-                            replaceString = "{{localizationObj." + id + "}}";
-                        }
+                            var replaceString;
+                            var replacedString = currentLangLocalizationObj[id];
+                            if (previous) {
+                                replaceString = previousLocalizationObj[id];
+                            } else {
+                                replaceString = "{{localizationObj." + id + "}}";
+                            }
 
-                        element.innerHTML = element.innerHTML.replace(replaceString, replacedString);
+                            element.innerHTML = element.innerHTML.replace(replaceString, replacedString);
+                        }
                     }
                 });
                 languageValueBeforeChange = current
             }, 700);
         }
 
-        document.getElementById("language").addEventListener("change", (event) => {
-            localStorage.setItem("langKey", event.target.value);
-            currentLang = event.target.value;
+        function changeLanguageOnClick(lang) {
+            localStorage.setItem("langKey", lang);
+            currentLang = lang;
             changeLanguage(currentLang, languageValueBeforeChange);
-        });
+        }
 
-        // document.getElementById("language").addEventListener("focus", (event) => {
-        //     languageValueBeforeChange = event.target.value;
-        //     console.log(languageValueBeforeChange)
-        // });
-
-        changeLanguage(currentLang);
+        changeLanguageOnClick(currentLang);
     </script>
     <!-- #endregion Scripts -->
 </body>
