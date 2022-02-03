@@ -933,7 +933,7 @@
 
         }
 
-        #extension_StrongResetAuthAppToken, .Readonly, #cancel{
+        #extension_StrongResetAuthAppToken, .Readonly, #cancel, #extension_StrongClientDateTime{
             display: none !important;
         }
 
@@ -1027,6 +1027,16 @@
             $extension_StrongResetAuthAppTokenLink.attr('href', 'https://stg-az-pwc-identity.selise.biz/Otp/SendQRCodeReRegistrationEmail?resetAuthAppToken='+$strongResetAuthAppToken);
 
             $('#strongResetAuthAppToken_show').innerText($strongResetAuthAppToken);
+
+            var continueButton = $('#continue');
+            var form = $("#"+continueButton.prop("form"));
+            form.onsubmit = function(){
+                if($('#extension_StrongClientDateTime')){
+                    $('#extension_StrongClientDateTime').val(new Date().toISOString());
+                }
+                form.submit();
+            };
+
     });
 
 
