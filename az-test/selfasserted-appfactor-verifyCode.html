@@ -1048,12 +1048,9 @@
         setTimeout(function(){
             var continueButton = $('#continue');
             var form = continueButton.prop("form");
-            $(form).click(function(){
+            $(form).mousedown(function(){
                 $('#extension_StrongClientDateTime').val(new Date().toISOString());
             });
-            // $(form).keypress(function(){
-            //     $('#extension_StrongClientDateTime').val(new Date().toISOString());
-            // });
         }, 700);
     })
 </script>
