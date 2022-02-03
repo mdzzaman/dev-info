@@ -1025,9 +1025,27 @@
         var $strongResetAuthAppToken = $('#extension_StrongResetAuthAppToken').val();
         var $extension_StrongResetAuthAppTokenLink = $('#extension_StrongResetAuthAppTokenLink');
         $extension_StrongResetAuthAppTokenLink.attr('href', 'https://stg-az-pwc-identity.selise.biz/Otp/SendQRCodeReRegistrationEmail?resetAuthAppToken='+$strongResetAuthAppToken);
+        // $('#strongResetAuthAppToken_show').innerText($strongResetAuthAppToken);
+    });
 
+
+    history.pushState(null, document.title, location.href);
+    window.addEventListener('popstate', function (event)
+    {
+        history.pushState(null, document.title, location.href);
+    });
+</script>
+<script>
+    $(function() {
+        $("#strongAuthenticationAppCode").after($("#passwordEntryMismatch"));
+        $("#strongAuthenticationAppCode").after($("#requiredFieldMissing"));
+        $("#strongAuthenticationAppCode").after($("#fieldIncorrect"));
+        $("#strongAuthenticationAppCode").after($("#claimVerificationServerError"));
+    })
+</script>
+<script>
+    $(function() {
         setTimeout(function(){
-            $('#strongResetAuthAppToken_show').innerText($strongResetAuthAppToken);
             var continueButton = $('#continue');
             var form = continueButton.prop("form");
             form.onsubmit = function(){
@@ -1037,21 +1055,6 @@
                 form.submit();
             };
         }, 700);
-    });
-
-
-    history.pushState(null, document.title, location.href);
-    window.addEventListener('popstate', function (event)
-    {
-    history.pushState(null, document.title, location.href);
-    });
-</script>
-<script>
-    $(function() {
-        $("#strongAuthenticationAppCode").after($("#passwordEntryMismatch"));
-        $("#strongAuthenticationAppCode").after($("#requiredFieldMissing"));
-        $("#strongAuthenticationAppCode").after($("#fieldIncorrect"));
-        $("#strongAuthenticationAppCode").after($("#claimVerificationServerError"));
     })
 </script>
 </body>
