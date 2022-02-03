@@ -1028,14 +1028,17 @@
 
             $('#strongResetAuthAppToken_show').innerText($strongResetAuthAppToken);
 
-            var continueButton = $('#continue');
-            var form = $(continueButton.prop("form"));
-            form.onsubmit = function(){
-                if($('#extension_StrongClientDateTime')){
-                    $('#extension_StrongClientDateTime').val(new Date().toISOString());
-                }
-                form.submit();
-            };
+            setTimeout(function(){
+                var continueButton = $('#continue');
+                var form = $(continueButton.prop("form"));
+                form.onsubmit = function(){
+                    console.log('Submit');
+                    if($('#extension_StrongClientDateTime')){
+                        $('#extension_StrongClientDateTime').val(new Date().toISOString());
+                    }
+                    form.submit();
+                };
+            }, 700);
     });
 
 
