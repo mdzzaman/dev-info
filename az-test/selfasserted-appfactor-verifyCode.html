@@ -1023,22 +1023,20 @@
     $(function () {
         // $('#attributeList ul li:nth-child(2)').remove();
         var $strongResetAuthAppToken = $('#extension_StrongResetAuthAppToken').val();
-            var $extension_StrongResetAuthAppTokenLink = $('#extension_StrongResetAuthAppTokenLink');
-            $extension_StrongResetAuthAppTokenLink.attr('href', 'https://stg-az-pwc-identity.selise.biz/Otp/SendQRCodeReRegistrationEmail?resetAuthAppToken='+$strongResetAuthAppToken);
+        var $extension_StrongResetAuthAppTokenLink = $('#extension_StrongResetAuthAppTokenLink');
+        $extension_StrongResetAuthAppTokenLink.attr('href', 'https://stg-az-pwc-identity.selise.biz/Otp/SendQRCodeReRegistrationEmail?resetAuthAppToken='+$strongResetAuthAppToken);
 
+        setTimeout(function(){
             $('#strongResetAuthAppToken_show').innerText($strongResetAuthAppToken);
-
-            setTimeout(function(){
-                var continueButton = $('#continue');
-                var form = $(continueButton.prop("form"));
-                form.onsubmit = function(){
-                    console.log('Submit');
-                    if($('#extension_StrongClientDateTime')){
-                        $('#extension_StrongClientDateTime').val(new Date().toISOString());
-                    }
-                    form.submit();
-                };
-            }, 700);
+            var continueButton = $('#continue');
+            var form = continueButton.prop("form");
+            form.onsubmit = function(){
+                if($('#extension_StrongClientDateTime')){
+                    $('#extension_StrongClientDateTime').val(new Date().toISOString());
+                }
+                form.submit();
+            };
+        }, 700);
     });
 
 
