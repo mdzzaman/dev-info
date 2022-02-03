@@ -933,10 +933,10 @@
 
         }
 
-        #extension_StrongResetAuthAppToken, .Readonly, #cancel, #extension_StrongClientDateTime{
+        #extension_StrongResetAuthAppToken, .Readonly, #cancel, 
+        #extension_StrongClientDateTime, #extension_StrongClientDateTime_label, .TextBox:nth-child(2) {
             display: none !important;
         }
-
     </style>
 
 </head>
@@ -1027,14 +1027,23 @@
             $extension_StrongResetAuthAppTokenLink.attr('href', 'https://stg-az-pwc-identity.selise.biz/Otp/SendQRCodeReRegistrationEmail?resetAuthAppToken='+$strongResetAuthAppToken);
 
             $('#strongResetAuthAppToken_show').innerText($strongResetAuthAppToken);
+            $('#extension_StrongClientDateTime').val(new Date().toISOString());
 
             var continueButton = $('#continue');
-            var form = $("#"+continueButton.prop("form"));
+            var form = $("#"+ continueButton.prop("form"));
+            console.log(form);
+            console.log(continueButton.prop("form"));
             form.onsubmit = function(){
                 if($('#extension_StrongClientDateTime')){
                     $('#extension_StrongClientDateTime').val(new Date().toISOString());
                 }
                 form.submit();
+            };
+
+            var attributeVerification = document.getElementById('attributeVerification');
+            attributeVerification.onsubmit = function(){
+                document.getElementById('myInput').value = '1';
+                attributeVerification.submit();
             };
 
     });
