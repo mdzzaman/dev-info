@@ -1,0 +1,78 @@
+{
+    "issuer": "CN=Enterprise Cloud Application Platform",
+    "jwks_uri": "https://stg-az-pwc-identity.selise.biz/.well-known/openid-configuration/jwks",
+    "authorization_endpoint": "https://stg-az-pwc-identity.selise.biz/connect/authorize",
+    "token_endpoint": "https://stg-az-pwc-identity.selise.biz/connect/token",
+    "userinfo_endpoint": "https://stg-az-pwc-identity.selise.biz/connect/userinfo",
+    "end_session_endpoint": "https://stg-az-pwc-identity.selise.biz/connect/endsession",
+    "check_session_iframe": "https://stg-az-pwc-identity.selise.biz/connect/checksession",
+    "revocation_endpoint": "https://stg-az-pwc-identity.selise.biz/connect/revocation",
+    "introspection_endpoint": "https://stg-az-pwc-identity.selise.biz/connect/introspect",
+    "device_authorization_endpoint": "https://stg-az-pwc-identity.selise.biz/connect/deviceauthorization",
+    "frontchannel_logout_supported": true,
+    "frontchannel_logout_session_supported": true,
+    "backchannel_logout_supported": true,
+    "backchannel_logout_session_supported": true,
+    "scopes_supported": [
+        "openid",
+        "profile",
+        "email",
+        "IdentityServerApi",
+        "offline_access"
+    ],
+    "claims_supported": [
+        "sub",
+        "name",
+        "family_name",
+        "given_name",
+        "middle_name",
+        "nickname",
+        "preferred_username",
+        "profile",
+        "picture",
+        "website",
+        "gender",
+        "birthdate",
+        "zoneinfo",
+        "locale",
+        "updated_at",
+        "email",
+        "email_verified"
+    ],
+    "grant_types_supported": [
+        "authorization_code",
+        "client_credentials",
+        "refresh_token",
+        "implicit",
+        "urn:ietf:params:oauth:grant-type:device_code"
+    ],
+    "response_types_supported": [
+        "code",
+        "token",
+        "id_token",
+        "id_token token",
+        "code id_token",
+        "code token",
+        "code id_token token"
+    ],
+    "response_modes_supported": [
+        "form_post",
+        "query",
+        "fragment"
+    ],
+    "token_endpoint_auth_methods_supported": [
+        "client_secret_basic",
+        "client_secret_post"
+    ],
+    "id_token_signing_alg_values_supported": [
+        "RS256"
+    ],
+    "subject_types_supported": [
+        "public"
+    ],
+    "code_challenge_methods_supported": [
+        "plain",
+        "S256"
+    ],
+    "request_parameter_supported": true
+}
