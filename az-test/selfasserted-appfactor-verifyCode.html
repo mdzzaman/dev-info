@@ -1196,10 +1196,6 @@
             $("#strongAuthenticationAppCode").after($("#requiredFieldMissing"));
             $("#strongAuthenticationAppCode").after($("#fieldIncorrect"));
             $("#strongAuthenticationAppCode").after($("#claimVerificationServerError"));
-
- 
-          
-           
         })
 
         var localizationObj = {
@@ -1257,10 +1253,6 @@
         var languageValueBeforeChange;
         document.getElementById("language" + currentLang.toUpperCase()).classList.add('active-button');
 
-         
-         
-       
-
 
         function changeLanguage(current, previous) {
             var currentLangLocalizationObj = localizationObj[current];
@@ -1272,7 +1264,7 @@
                 document.getElementById("language" + previous.toUpperCase()).classList.remove('active-button');
             }
 
-            setTimeout(() => {
+            setTimeout(function() {
                 idList.forEach(id => {
                     var element = document.getElementById(id);
                     if (element) {
@@ -1293,7 +1285,7 @@
                     }
                 });
                 languageValueBeforeChange = current
-            }, 700);
+            }, 100);
         }
 
 
@@ -1303,7 +1295,7 @@
             changeLanguage(currentLang, languageValueBeforeChange);
         }
         
-        setTimeout(()=>{
+        setTimeout(function(){
             document.getElementById("strongAuthenticationAppCode_label").innerHTML  = "{{localizationObj.strongAuthenticationAppCode_label}}";
             console.log(document.getElementById("strongAuthenticationAppCode_label").innerHTML);
             document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj.strongAuthenticationAppCode}}";
@@ -1313,8 +1305,12 @@
             document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj.claimVerificationServerError}}";
             console.log(document.getElementById("claimVerificationServerError").innerHTML);
             // document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj.itemLevel}}";
+            
+        },1000);
+
+        setTimeout(function(){
             changeLanguageOnClick(currentLang);
-        },1500);
+        },1200);
 
     $(function() {
         setTimeout(function(){
