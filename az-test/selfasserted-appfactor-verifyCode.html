@@ -1198,13 +1198,7 @@
             $("#strongAuthenticationAppCode").after($("#claimVerificationServerError"));
 
  
-            setTimeout(()=>{
-                document.getElementById("strongAuthenticationAppCode_label").innerText  = "{{localizationObj.strongAuthenticationAppCode_label}}";
-            document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj.strongAuthenticationAppCode}}";
-            document.getElementById('#continue').innerHTML = "{{localizationObj.continue}}";
-            document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj.claimVerificationServerError}}";
-            document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj.itemLevel}}";
-            },700);
+          
            
         })
 
@@ -1308,8 +1302,15 @@
             currentLang = lang;
             changeLanguage(currentLang, languageValueBeforeChange);
         }
-
-        changeLanguageOnClick(currentLang);
+        
+        setTimeout(()=>{
+            document.getElementById("strongAuthenticationAppCode_label").innerHTML  = "{{localizationObj.strongAuthenticationAppCode_label}}";
+            document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj.strongAuthenticationAppCode}}";
+            document.getElementById('#continue').innerHTML = "{{localizationObj.continue}}";
+            document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj.claimVerificationServerError}}";
+            document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj.itemLevel}}";
+            changeLanguageOnClick(currentLang);
+        },1500);
 
     $(function() {
         setTimeout(function(){
