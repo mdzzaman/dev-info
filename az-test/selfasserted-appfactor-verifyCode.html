@@ -1197,12 +1197,15 @@
             $("#strongAuthenticationAppCode").after($("#fieldIncorrect"));
             $("#strongAuthenticationAppCode").after($("#claimVerificationServerError"));
 
-
-            document.getElementById("strongAuthenticationAppCode_label").innerText  = "{{localizationObj.strongAuthenticationAppCode_label}}";
+ 
+            setTimeout(()=>{
+                document.getElementById("strongAuthenticationAppCode_label").innerText  = "{{localizationObj.strongAuthenticationAppCode_label}}";
             document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj.strongAuthenticationAppCode}}";
             document.getElementById('#continue').innerHTML = "{{localizationObj.continue}}";
             document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj.claimVerificationServerError}}";
             document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj.itemLevel}}";
+            },700);
+           
         })
 
         var localizationObj = {
