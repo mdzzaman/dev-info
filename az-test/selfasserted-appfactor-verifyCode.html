@@ -1305,13 +1305,13 @@
         
         setTimeout(()=>{
             document.getElementById("strongAuthenticationAppCode_label").innerHTML  = "{{localizationObj.strongAuthenticationAppCode_label}}";
-            console.log(document.getElementById("strongAuthenticationAppCode_label").innerHTML)
+            console.log(document.getElementById("strongAuthenticationAppCode_label").innerHTML);
             document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj.strongAuthenticationAppCode}}";
-            console.log(document.getElementById("strongAuthenticationAppCode").placeholder)
-            document.getElementById('#continue').innerHTML = "{{localizationObj.continue}}";
-            console.log( document.getElementById('#continue').innerHTML)
+            console.log(document.getElementById("strongAuthenticationAppCode").placeholder);
+            document.getElementById('continue').innerHTML = "{{localizationObj.continue}}";
+            console.log( document.getElementById('#continue').innerHTML);
             document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj.claimVerificationServerError}}";
-            console.log(document.getElementById("claimVerificationServerError").innerHTML)
+            console.log(document.getElementById("claimVerificationServerError").innerHTML);
             // document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj.itemLevel}}";
             changeLanguageOnClick(currentLang);
         },1500);
