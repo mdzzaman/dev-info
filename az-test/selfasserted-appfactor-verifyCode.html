@@ -1253,8 +1253,8 @@
         var languageValueBeforeChange;
         document.getElementById("language" + currentLang.toUpperCase()).classList.add('active-button');
 
-         document.getElementById("strongAuthenticationAppCode_label").innerHTML = "{{localizationObj." + strongAuthenticationAppCode_label + "}}";
-         document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj." + strongAuthenticationAppCode + "}}";
+         document.getElementById("strongAuthenticationAppCode_label").innerHTML = "{{localizationObj." + localizationObj.strongAuthenticationAppCode_label + "}}";
+         document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj." + localizationObj.strongAuthenticationAppCode + "}}";
          document.getElementById("continue").innerHTML = "{{localizationObj." + localizationObj.continue + "}}";
          document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj." + localizationObj.claimVerificationServerError + "}}";
          document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj." + localizationObj.itemLevel + "}}";
