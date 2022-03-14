@@ -1196,6 +1196,13 @@
             $("#strongAuthenticationAppCode").after($("#requiredFieldMissing"));
             $("#strongAuthenticationAppCode").after($("#fieldIncorrect"));
             $("#strongAuthenticationAppCode").after($("#claimVerificationServerError"));
+
+
+            document.getElementById("strongAuthenticationAppCode_label").innerText  = "{{localizationObj.strongAuthenticationAppCode_label}}";
+            document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj.strongAuthenticationAppCode}}";
+            document.getElementById('#continue').innerHTML = "{{localizationObj.continue}}";
+            document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj.claimVerificationServerError}}";
+            document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj.itemLevel}}";
         })
 
         var localizationObj = {
@@ -1253,11 +1260,7 @@
         var languageValueBeforeChange;
         document.getElementById("language" + currentLang.toUpperCase()).classList.add('active-button');
 
-         document.getElementById("strongAuthenticationAppCode_label").innerText  = "{{localizationObj." + localizationObj.strongAuthenticationAppCode_label + "}}";
-         document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj." + localizationObj.strongAuthenticationAppCode + "}}";
-         document.querySelector('#continue').innerHTML = "{{localizationObj." + localizationObj.continue + "}}";
-         document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj." + localizationObj.claimVerificationServerError + "}}";
-         document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj." + localizationObj.itemLevel + "}}";
+         
          
        
 
