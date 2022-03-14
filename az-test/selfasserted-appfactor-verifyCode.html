@@ -1116,7 +1116,7 @@
         <table class="panel_layout" style="width: 100%">
             <tbody>
                 <tr class="panel_layout_row">
-                    <td id="panel_left" />
+                    <td id="panel_left" >
                     <td id="panel_center">
 
                         <div class="logo-container">
@@ -1163,7 +1163,7 @@
                                 <a class="support-center center"
                                     href="https://www.swisslife-global.com/global-private-wealth/resources/e-private-wealth.html"
                                     target="__blank">
-                                    <span class="label-support">Support center</span>
+                                    <span class="label-support" id="Support">{{localizationObj.Support}}</span>
                                 </a>
                             </div>
 
@@ -1208,7 +1208,12 @@
                 "ENTER_CODE": "Enter the code in authenticator",
                 "PLEASE_CHECK": "Please check the authenticator app and enter the code below to complete the verification process",
                 "extension_StrongResetAuthAppTokenLink": "Can't verify? Do you want to reset trusted authenticator?",
-                "ENTER_VERIFICATION": "Enter the varification code"
+                "strongAuthenticationAppCode_label": "Enter the varification code",
+                "strongAuthenticationAppCode": "Enter the varification code",
+                "continue":"Continue",
+                "claimVerificationServerError":"The verification code is invalid.",
+                "itemLevel":"This information is required.",
+                "Support":"Support center"
             },
             fr: {
                 "HEADER_CONNECTING": "Vous connecter à un monde de choix",
@@ -1219,7 +1224,12 @@
                 "ENTER_CODE": "Entrez le code dans l'authentificateur",
                 "PLEASE_CHECK": "Veuillez vérifier l'application d'authentification et entrer le code ci-dessous pour compléter le processus de vérification.",
                 "extension_StrongResetAuthAppTokenLink": "Vous ne pouvez pas vérifier ? Voulez-vous réinitialiser l'authentificateur de confiance ?",
-                "ENTER_VERIFICATION": "Entrez le code de vérification"
+                "strongAuthenticationAppCode_label": "Entrez le code de vérification",
+                "strongAuthenticationAppCode": "Entrez le code de vérification",
+                "continue":"Continuer",
+                "claimVerificationServerError":"Le code de vérification n'est pas valide.",
+                "itemLevel":"Cette information est obligatoire.",
+                "Support":"Centre d'assistance"
             },
             de: {
                 "HEADER_CONNECTING": "Die Verbindung zu einer Welt der Möglichkeiten",
@@ -1230,13 +1240,27 @@
                 "ENTER_CODE": "Eingabe des Codes im Authentifikator",
                 "PLEASE_CHECK": "Bitte überprüfen Sie die Authenticator-App und geben Sie den unten stehenden Code ein, um den Verifizierungsprozess abzuschließen",
                 "extension_StrongResetAuthAppTokenLink": "Können Sie sich nicht verifizieren? Möchten Sie den vertrauenswürdigen Authentifikator zurücksetzen?",
-                "ENTER_VERIFICATION": "Geben Sie den Bestätigungscode ein"
+                "strongAuthenticationAppCode_label": "Geben Sie den Bestätigungscode ein",
+                "strongAuthenticationAppCode": "Geben Sie den Bestätigungscode ein",
+                "continue":"Weiter",
+                "claimVerificationServerError":"Der Verifizierungscode ist ungültig.",
+                "itemLevel":"Diese Angaben sind erforderlich.",
+                "Support":"Unterstützungszentrum"
             }
         };
 
         var currentLang = (localStorage.getItem("langKey")) ? localStorage.getItem("langKey") : 'en';
         var languageValueBeforeChange;
         document.getElementById("language" + currentLang.toUpperCase()).classList.add('active-button');
+
+         document.getElementById("strongAuthenticationAppCode_label").innerHTML = "{{localizationObj." + strongAuthenticationAppCode_label + "}}";
+         document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj." + strongAuthenticationAppCode + "}}";
+         document.getElementById("continue").innerHTML = "{{localizationObj." + localizationObj.continue + "}}";
+         document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj." + localizationObj.claimVerificationServerError + "}}";
+         document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj." + localizationObj.itemLevel + "}}";
+         
+       
+
 
         function changeLanguage(current, previous) {
             var currentLangLocalizationObj = localizationObj[current];
