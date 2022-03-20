@@ -1101,11 +1101,11 @@
         <div class="new-background-image">
 
             <div class="main-text-container">
-                <h1 id="HEADER_CONNECTING" class="top-container-title">{{localizationObj.HEADER_CONNECTING}}</h1>
+                <h1 id="HEADER_CONNECTING" class="top-container-title">Connecting you to a world of choice</h1>
                 <p id="P_DIGITAL">Digital wealth planning solutions</p>
-                <p id="P_THAT_GIVE">{{localizationObj.P_THAT_GIVE}}</p>
-                <p id="P_TO_LIVE">{{localizationObj.P_TO_LIVE}}</p>
-                <p id="P_YOUR_LIFE" class="your-life">{{localizationObj.P_YOUR_LIFE}}</p>
+                <p id="P_THAT_GIVE">that give our partners and clients the tools and flexibility needed</p>
+                <p id="P_TO_LIVE">to live a self-determined life in line with their choices</p>
+                <p id="P_YOUR_LIFE" class="your-life">#yourlife</p>
             </div>
 
         </div>
@@ -1131,11 +1131,11 @@
                             <div class="inner_container">
 
                                 <h2 class="authenticator-title" id="ENTER_CODE">
-                                    {{localizationObj.ENTER_CODE}}
+                                    Enter the code in authenticator
                                 </h2>
 
                                 <p class="authenticator-text" id="PLEASE_CHECK">
-                                    {{localizationObj.PLEASE_CHECK}}
+                                    Please check the authenticator app and enter the code below to complete the verification process
                                 </p>
 
                                 <div class="api_container normaltext">
@@ -1145,7 +1145,7 @@
                                 </div>
 
                                 <a class="reset-link" id="extension_StrongResetAuthAppTokenLink">
-                                    {{localizationObj.extension_StrongResetAuthAppTokenLink}}
+                                    Can't verify? Do you want to reset trusted authenticator?
                                 </a>
 
                             </div>
@@ -1163,7 +1163,7 @@
                                 <a class="support-center center"
                                     href="https://www.swisslife-global.com/global-private-wealth/resources/e-private-wealth.html"
                                     target="__blank">
-                                    <span class="label-support" id="Support">{{localizationObj.Support}}</span>
+                                    <span class="label-support" id="Support">Support center</span>
                                 </a>
                             </div>
 
@@ -1295,10 +1295,10 @@
         
         setTimeout(function(){
             document.getElementById("strongAuthenticationAppCode_label").innerHTML  = "Enter the varification code";
-            document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj.strongAuthenticationAppCode}}";
-            document.getElementById('continue').innerHTML = "{{localizationObj.continue}}";
-            document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj.claimVerificationServerError}}";
-            // document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj.itemLevel}}";
+            document.getElementById("strongAuthenticationAppCode").placeholder = "Enter the varification code";
+            document.getElementById('continue').innerHTML = "Continue";
+            document.getElementById("claimVerificationServerError").innerHTML = "The verification code is invalid.";
+            // document.getElementsByClassName("itemLevel")[0].innerHTML= "This information is required.";
             
         },1000);
 
