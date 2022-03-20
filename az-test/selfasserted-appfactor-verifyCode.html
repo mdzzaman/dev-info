@@ -1102,7 +1102,7 @@
 
             <div class="main-text-container">
                 <h1 id="HEADER_CONNECTING" class="top-container-title">{{localizationObj.HEADER_CONNECTING}}</h1>
-                <p id="P_DIGITAL">{{localizationObj.P_DIGITAL}}</p>
+                <p id="P_DIGITAL">Digital wealth planning solutions</p>
                 <p id="P_THAT_GIVE">{{localizationObj.P_THAT_GIVE}}</p>
                 <p id="P_TO_LIVE">{{localizationObj.P_TO_LIVE}}</p>
                 <p id="P_YOUR_LIFE" class="your-life">{{localizationObj.P_YOUR_LIFE}}</p>
@@ -1270,17 +1270,15 @@
                     if (element) {
                         if (element.nodeName === "INPUT") {
                             element.placeholder = currentLangLocalizationObj[id];
-
                         } else {
                             var replaceString;
                             var replacedString = currentLangLocalizationObj[id];
-                            if (previous) {
-                                replaceString = previousLocalizationObj[id];
-                            } else {
-                                replaceString = "{{localizationObj." + id + "}}";
-                            }
-
-                            element.innerHTML = element.innerHTML.replace(replaceString, replacedString);
+                            // if (previous) {
+                            //     replaceString = previousLocalizationObj[id];
+                            // } else {
+                            //     replaceString = "{{localizationObj." + id + "}}";
+                            // }
+                            element.innerHTML = replacedString; //element.innerHTML.replace(replaceString, replacedString);
                         }
                     }
                 });
@@ -1296,14 +1294,10 @@
         }
         
         setTimeout(function(){
-            document.getElementById("strongAuthenticationAppCode_label").innerHTML  = "{{localizationObj.strongAuthenticationAppCode_label}}";
-            console.log(document.getElementById("strongAuthenticationAppCode_label").innerHTML);
+            document.getElementById("strongAuthenticationAppCode_label").innerHTML  = "Enter the varification code";
             document.getElementById("strongAuthenticationAppCode").placeholder = "{{localizationObj.strongAuthenticationAppCode}}";
-            console.log(document.getElementById("strongAuthenticationAppCode").placeholder);
             document.getElementById('continue').innerHTML = "{{localizationObj.continue}}";
-            console.log( document.getElementById('continue').innerHTML);
             document.getElementById("claimVerificationServerError").innerHTML = "{{localizationObj.claimVerificationServerError}}";
-            console.log(document.getElementById("claimVerificationServerError").innerHTML);
             // document.getElementsByClassName("itemLevel")[0].innerHTML= "{{localizationObj.itemLevel}}";
             
         },1000);
