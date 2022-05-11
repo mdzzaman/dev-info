@@ -1315,7 +1315,7 @@
                 console.log('mousedown');
             });
 
-            $(document).keypress(function(e) {
+            $(form).keydown(function(e) {
                 if(e.which == 13) {
                     console.log('on enter');
                     $('#extension_StrongClientDateTime').val(new Date().toISOString());
