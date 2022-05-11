@@ -1314,7 +1314,7 @@
                 $('#extension_StrongClientDateTime').val(new Date().toISOString());
                 console.log('mousedown');
             });
-            $(document).on('submit',form.val(),function(){
+            $(document).on('submit','#'+form.val(),function(){
                 console.log('submit');
                 $('#extension_StrongClientDateTime').val(new Date().toISOString());
             });
