@@ -1179,7 +1179,7 @@
         $(function () {
             var $strongResetAuthAppToken = $('#extension_StrongResetAuthAppToken').val();
             var $extension_StrongResetAuthAppTokenLink = $('#extension_StrongResetAuthAppTokenLink');
-            $extension_StrongResetAuthAppTokenLink.attr('href', 'https://epw-identity.test-swisslife.com/Otp/SendQRCodeReRegistrationEmail?resetAuthAppToken='+$strongResetAuthAppToken);
+            $extension_StrongResetAuthAppTokenLink.attr('href', 'https://stg-az-pwc-identity.selise.biz/Otp/SendQRCodeReRegistrationEmail?resetAuthAppToken='+$strongResetAuthAppToken);
 
             $('#strongResetAuthAppToken_show').innerText($strongResetAuthAppToken);
         });
@@ -1208,8 +1208,8 @@
                 "ENTER_CODE": "Enter the code in authenticator",
                 "PLEASE_CHECK": "Please check the authenticator app and enter the code below to complete the verification process",
                 "extension_StrongResetAuthAppTokenLink": "Can't verify? Do you want to reset trusted authenticator?",
-                "strongAuthenticationAppCode_label": "Enter the varification code",
-                "strongAuthenticationAppCode": "Enter the varification code",
+                "strongAuthenticationAppCode_label": "Enter the verification code",
+                "strongAuthenticationAppCode": "Enter the verification code",
                 "continue":"Continue",
                 "claimVerificationServerError":"The verification code is invalid.",
                 "itemLevel":"This information is required.",
@@ -1294,8 +1294,8 @@
         }
         
         setTimeout(function(){
-            document.getElementById("strongAuthenticationAppCode_label").innerHTML  = "Enter the varification code";
-            document.getElementById("strongAuthenticationAppCode").placeholder = "Enter the varification code";
+            document.getElementById("strongAuthenticationAppCode_label").innerHTML  = "Enter the verification code";
+            document.getElementById("strongAuthenticationAppCode").placeholder = "Enter the verification code";
             document.getElementById('continue').innerHTML = "Continue";
             document.getElementById("claimVerificationServerError").innerHTML = "The verification code is invalid.";
             // document.getElementsByClassName("itemLevel")[0].innerHTML= "This information is required.";
@@ -1312,30 +1312,7 @@
             var form = continueButton.prop("form");
             $(form).mousedown(function(){
                 $('#extension_StrongClientDateTime').val(new Date().toISOString());
-                console.log('mousedown');
             });
-
-            $(form).keydown(function(e) {
-                if(e.which == 13) {
-                    console.log('on enter');
-                    $('#extension_StrongClientDateTime').val(new Date().toISOString());
-                }
-            });
-
-            // $(form).on('submit',function(){
-            //     console.log('on submit');
-            //     $('#extension_StrongClientDateTime').val(new Date().toISOString());
-            // });
-
-            // $(form).submit(function(){
-            //     console.log('submit');
-            //     $('#extension_StrongClientDateTime').val(new Date().toISOString());
-            // });
-
-            // $(document).on('submit','#'+continueButton.attr("form"),function(){
-            //     console.log('document on submit submit');
-            //     $('#extension_StrongClientDateTime').val(new Date().toISOString());
-            // });
         }, 700);
     })
 </script>
